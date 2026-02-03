@@ -1,0 +1,149 @@
+*QUESTION 1*
+A local utility company requires a Java program to help residents estimate their electricity bills based on individual appliance usage. You are tasked with developing the *ElectricityBillCalculator* class.
+
+1. *Constants & Inputs:*
+• Define a constant COST_PER_KWH with a value of 0.20.
+• Prompt the user to input the total number of appliances (n).
+• Use a for loop to collect the consumption (kWh) for each of the n appliances.
+
+2. *Conditional Logic (The Surcharge)*:
+• Calculate the base cost for each appliance.
+• If an appliance's consumption exceeds 100 kWh, apply a 15% surcharge to its calculated cost.
+
+3. *Data Accumulation & Output:*
+• For every appliance, print a detailed line showing the appliance number, the kWh used, and the final cost (clearly flagging if a surcharge was applied).
+• Maintain a running total for both Total Consumption and Total Cost.
+• Display the final totals after the loop finishes, formatted to 2 decimal places.
+
+
+
+*QUESTION 2*
+A logistics company needs a tool to analyze the weight distribution of boxes in a warehouse shipment. You are required to write a Java program named *WarehouseAnalysis* that processes a fixed set of inventory data.
+
+1. *Data Initialization:*
+• Create an array of doubles containing the following 10 box weights: 12.5, 55.0, 45.0, 18.0, 22.5, 60.0, 30.0, 15.0, 50.0, 10.0. 
+
+2. *Classification Logic:*
+Iterate through the array and classify each box based on the following criteria:
+• Heavy: Weight > 50 kg
+• Medium: Weight between 20 kg and 50 kg (inclusive)
+• Light: Weight < 20 kg
+• For each box, print its index (starting from 1) and its classification.
+
+3. *Statistical Calculations:*
+• Calculate the Total Weight of all boxes.
+• Calculate the Average Weight of the shipment.
+• Count how many boxes fall into each category (Heavy, Medium, Light).
+• Identify the Heaviest Box, noting both its weight and its position in the sequence.
+
+4. *Output Requirements:*
+• Display the classification list first.
+• Display a summary section showing the total weight, average weight, counts for each category, and the details of the heaviest box found.
+
+
+
+*QUESTION 3*
+A logistics company tracks the daily fuel consumption of a single vehicle over a one-week period. You are required to write a Java program named *FuelConsumptionAnalysis* to process this data.
+
+1. *Data Setup:*
+• Initialize an array of doubles named fuelConsumption with the following values: {12.5, 22.0, 8.4, 18.6, 25.3, 9.8, 15.0}.
+
+2. *Iterative Requirements (Strict Restriction):*
+• You must use a while loop to traverse the array.
+• Ensure you manually manage the index pointer to avoid an ArrayIndexOutOfBoundsException.
+
+3. *Classification Logic:*
+For each day, categorize the fuel usage based on these thresholds:
+• High: > 20 liters
+• Normal: 10 to 20 liters (inclusive)
+• Low: < 10 liters
+
+4. *Calculations & Aggregations:*
+• Calculate the Total and Average fuel consumption for the week.
+• Maintain a count for each category (High, Normal, Low).
+• Find the peak consumption day (both the day number and the amount).
+
+5. *Output Formatting:*
+• Print a line-by-line report for each day.
+• Use printf to ensure all fuel values and averages are displayed to 2 decimal places.
+
+
+
+*QUESTION 4*
+Telecel, a well known mobile service provider needs a script to monitor a user's data consumption in real-time. You are required to write a Java program named *MobileDataMonitor* that simulates a declining data balance.
+
+1. *Initial State:*
+• Start the user with an initial balance of 20.0 GB.
+• Initialize a variable to track the total data used across all sessions.
+
+2. *The Monitoring Loop:*
+• Use a while loop that continues to run as long as the data balance is greater than zero.
+• Inside the loop, prompt the user to enter the amount of data used in the current session.
+
+3. *Input Validation & Processing:*
+• If the user enters a negative value, display an error message and skip the rest of the loop logic (using the continue keyword) to ask for input again.
+• Subtract the valid usage from the current balance and add it to the total usage.
+
+4. *Status Alerts:*
+Implement the following notification system based on the remaining balance:
+• Balance > 5 GB: "Data balance is sufficient."
+• Balance between 1 GB and 5 GB: "Warning: Data balance is low."
+• Balance between 0 GB and 1 GB: "Critical: Data almost exhausted."
+• Balance  <= 0 GB: "Data exhausted. Internet disconnected."
+
+5. *Final Summary:*
+• Once the loop terminates, display the total data used and the final balance (formatted to 2 decimal places).
+
+
+
+*QUESTION 5*
+A local cinema requires a kiosk application to handle ticket sales. You are tasked with writing a Java program named *CinemaTicketBooking* that allows users to select multiple ticket types and provides a final summary.
+
+1. *Looping Structure:*
+• Use a do-while loop to display a menu of options to the user repeatedly.
+• The menu must continue to appear until the user selects the "Finish Booking" option (Option 4).
+
+2. *Pricing & Selection:*
+Implement the following ticket categories:
+• Option 1 (Regular): ₵25.00
+• Option 2 (Student): ₵15.00
+• Option 3 (VIP): ₵50.00
+• Any input other than 1, 2, 3, or 4 should trigger an "Invalid option" message.
+
+3. *Data Tracking:*
+• Maintain a running count of the total number of tickets booked.
+• Accumulate the total cost of all selected tickets.
+
+4. *Categorization & Summary:*
+After the user finishes booking (exits the loop), display a summary based on the following logic:
+• If no tickets were purchased, display "No tickets booked."
+• If between 1 and 3 tickets were purchased, classify it as a "Standard booking."
+• If more than 3 tickets were purchased, classify it as a "Group booking."
+
+5. *Output Formatting:*
+• Print the total ticket count and the total cost (formatted to 2 decimal places).
+
+
+
+*QUESTION 6*
+Develop a Java program named *KioskSystem* that simulates a fast-food ordering terminal. The program must allow for multiple items to be added to a cart before final checkout.
+
+1. *Iterative Logic:*
+• Implement a do-while loop to keep the terminal active until the user chooses to "Checkout" (Option 3).
+
+2. *Item Pricing & Inventory:*
+• Burger: $5.99
+• Fries: $2.50
+• The program should prompt the user for a quantity whenever an item is selected.
+
+3. *Validation:*
+• Use decision statements to handle the menu choices.
+• Inside the Burger and Fries cases, ensure the user cannot enter a negative quantity. If they do, display an error and do not add to the total.
+
+4. *Data Accumulation:*
+• Track the Grand Total cost of all items.
+• Track the Total Item Count (e.g., 2 burgers + 1 fries = 3 items).
+
+5. *Output Requirements:*
+• Provide feedback after every successful addition (e.g., "Added 2 Burgers to cart").
+• Upon checkout, display the total number of items purchased and the final bill amount formatted to 2 decimal places.
