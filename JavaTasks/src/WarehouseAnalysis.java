@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class WarehouseAnalysis {
     static String classify(double weight) {
         String classification;
@@ -17,24 +15,29 @@ public class WarehouseAnalysis {
 
         double[] boxWeights = {12.5, 55.0, 45.0, 18.0, 22.5, 60.0, 30.0, 15.0, 50.0, 10.0};
 
-        double totalWeight = 0;
         int numberOfBoxes = boxWeights.length;
         int numHeavy = 0;
         int numMedium = 0;
         int numLight = 0;
-        double heaviestBox = 0;
-        int heaviestBoxPosition = 0;
+        int heaviestBoxPosition = 1;
+        double heaviestBox = boxWeights[0];
+        double totalWeight = 0;
 
         for (int i = 0; i < numberOfBoxes; i++) {
             double weight = boxWeights[i];
-
             String classification = classify(weight);
-            System.out.println("Box " + (i + 1) + " | Weight: "+ weight +" | Category: " + classification);
+
+            System.out.println(
+                    "Box " + (i + 1) +
+                    " | Weight: "+ weight +
+                    " | Category: " + classification
+            );
+
             totalWeight += weight;
 
-            if (Objects.equals(classification, "heavy")) {
+            if (classification.equals("heavy")) {
                 numHeavy += 1;
-            } else if (Objects.equals(classification, "medium")) {
+            } else if (classification.equals("medium")) {
                 numMedium += 1;
             } else {
                 numLight += 1;
@@ -42,7 +45,7 @@ public class WarehouseAnalysis {
 
             if (weight > heaviestBox) {
                 heaviestBox = weight;
-                heaviestBoxPosition = i;
+                heaviestBoxPosition = i + 1;
             }
         }
 
@@ -56,6 +59,5 @@ public class WarehouseAnalysis {
         System.out.println("Number of boxes in each category: ");
         System.out.println("Heavy: " + numHeavy + " | Medium: " + numMedium + " | Light: " + numLight);
         System.out.println("Heaviest box: " + heaviestBox + " | Position: " + heaviestBoxPosition);
-
     }
 }
