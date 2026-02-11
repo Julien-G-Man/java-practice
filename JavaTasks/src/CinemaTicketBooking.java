@@ -1,9 +1,10 @@
+// QUESTION 5
+
 import java.util.Scanner;
 
 public class CinemaTicketBooking {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
         int choice;
@@ -11,7 +12,9 @@ public class CinemaTicketBooking {
         double totalCost = 0.0;
 
         do {
-            System.out.println("\n===== CINEMA TICKET MENU =====");
+            System.out.println("\n=============================");
+            System.out.println("CINEMA TICKET MENU");
+            System.out.println("-------------------------------");
             System.out.println("1. Regular Ticket (₵25.00)");
             System.out.println("2. Student Ticket (₵15.00)");
             System.out.println("3. VIP Ticket (₵50.00)");

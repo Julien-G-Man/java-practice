@@ -1,5 +1,6 @@
-public class FuelConsumptionAnalysis {
+// QUESTION 3
 
+public class FuelConsumptionAnalysis {
     static String categorize(double fuelUsage) {
         if (fuelUsage > 20) return "High";
         else if (fuelUsage < 10) return "Low";
@@ -10,12 +11,9 @@ public class FuelConsumptionAnalysis {
         double[] fuelConsumption = {12.5, 22.0, 8.4, 18.6, 25.3, 9.8, 15.0};
 
         double totalFuelConsumption = 0;
-        int peakConsumptionDay = 1;
         double peakFuelUsage = fuelConsumption[0];
-
-        int highCount = 0;
-        int normalCount = 0;
-        int lowCount = 0;
+        int peakConsumptionDay = 1;
+        int highCount = 0, normalCount = 0, lowCount = 0;
 
         int i = 0;
         while (i < fuelConsumption.length) {
@@ -54,6 +52,5 @@ public class FuelConsumptionAnalysis {
         System.out.println("Normal days: "+ normalCount);
         System.out.println("Low days: "+ lowCount);
         System.out.println("------------------------------------------");
-
     }
 }

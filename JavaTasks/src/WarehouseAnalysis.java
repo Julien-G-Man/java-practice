@@ -1,13 +1,10 @@
 public class WarehouseAnalysis {
     static String classify(double weight) {
         String classification;
-        if (weight > 50) {
-            classification = "heavy";
-        } else if (weight < 20) {
-            classification = "light";
-        } else {
-            classification = "medium";
-        }
+        if (weight > 50) classification = "Heavy";
+        else if (weight < 20) classification = "Light";
+        else classification = "Medium";
+
         return classification;
     }
 
@@ -35,13 +32,9 @@ public class WarehouseAnalysis {
 
             totalWeight += weight;
 
-            if (classification.equals("heavy")) {
-                numHeavy += 1;
-            } else if (classification.equals("medium")) {
-                numMedium += 1;
-            } else {
-                numLight += 1;
-            }
+            if (classification.equals("Heavy")) numHeavy += 1;
+            else if (classification.equals("Medium")) numMedium += 1;
+            else numLight += 1;
 
             if (weight > heaviestBox) {
                 heaviestBox = weight;

@@ -1,3 +1,5 @@
+// QUESTION 1
+
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
@@ -6,10 +8,7 @@ public class ElectricityBillCalculator {
     static final double COST_PER_KWH = 0.20;
     static double getCost(double consumption) {
         double cost = consumption * COST_PER_KWH;
-
-        if (consumption > 100) {
-            cost *= 1.15;
-        }
+        if (consumption > 100) cost *= 1.15;
 
         return cost;
     }
