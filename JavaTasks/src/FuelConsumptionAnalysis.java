@@ -20,6 +20,7 @@ public class FuelConsumptionAnalysis {
             int day = i + 1;
             double fuelUsage = fuelConsumption[i];
             String category = categorize(fuelUsage);
+
             System.out.printf(
                     "Day %d | Fuel Usage: %.2f | Category: %s%n",
                     day,

@@ -17,6 +17,11 @@ public class MobileDataMonitor {
                 continue;
             }
 
+            if (balance - used < 0) {
+                System.out.println("Insufficient balance");
+                continue;
+            }
+
             balance -= used;
             totalUsed += used;
 
@@ -29,6 +34,8 @@ public class MobileDataMonitor {
             } else {
                 System.out.println("Data exhausted. Internet disconnected.");
             }
+
+            System.out.printf("Current data balance: %.2f GB%n", balance);
         }
 
         System.out.printf("\nTotal data used: %.2f GB%n", totalUsed);
