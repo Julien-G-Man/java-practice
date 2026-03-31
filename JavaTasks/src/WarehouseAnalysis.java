@@ -32,9 +32,9 @@ public class WarehouseAnalysis {
 
             totalWeight += weight;
 
-            if (classification.equals("Heavy")) numHeavy += 1;
-            else if (classification.equals("Medium")) numMedium += 1;
-            else numLight += 1;
+            if (classification.equals("Heavy")) numHeavy++;
+            else if (classification.equals("Medium")) numMedium++;
+            else numLight++;
 
             if (weight > heaviestBox) {
                 heaviestBox = weight;
