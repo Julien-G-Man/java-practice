@@ -21,23 +21,21 @@ public class NumberAnalysis {
 
     public static double standardDeviation(int[] arr, double mean) {
         double sum = 0;
-
         for (int value : arr) {
             sum += Math.pow(value - mean, 2);
         }
-
-        double variance = sum / arr.length;
-        return Math.sqrt(variance);
+        //double variance = sum / arr.length;
+        return Math.sqrt(sum / arr.length);
     }
 
     public static void processNumbers(int low, int high, boolean odd) {
-
         int counter = 0;
 
         // First pass – count how many match
         for (int i = low; i <= high; i++) {
-            if (odd && i % 2 != 0) counter++;
-            if (!odd && i % 2 == 0) counter++;
+            if ((odd && i % 2 != 0) || (!odd && i % 2 == 0)) {
+                counter++;
+            }
         }
 
         int[] k = new int[counter];
@@ -52,10 +50,15 @@ public class NumberAnalysis {
             }
         }
 
+        if (k.length == 0) {
+            System.out.println("No numbers found in this category.");
+            return;
+        }
+
         double mean = sum / k.length;
         double stdDev = standardDeviation(k, mean);
 
-        System.out.println("Numbers: " + Arrays.toString(k));
+        System.out.println((odd ? "Odd" : "Even") + " Numbers: " + Arrays.toString(k));
         System.out.println("Mean: " + mean);
         System.out.println("Standard Deviation: " + stdDev);
 
@@ -74,16 +77,14 @@ public class NumberAnalysis {
         int pIndex = 0;
 
         for (int value : k) {
-            if (isPrime(value)) {
+            if (isPrime(value))
                 primes[pIndex++] = value;
-            }
         }
 
         System.out.println("Primes: " + Arrays.toString(primes));
     }
 
     public static void main(String[] args) {
-
         int low = 0;
         int high = 80;
 

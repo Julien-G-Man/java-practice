@@ -16,7 +16,7 @@ public class ExceptionsTrial {
         } catch(ArrayIndexOutOfBoundsException e) {
             System.out.println("Error: "+ e);
         } catch(Exception aex) {
-            System.out.println("Error: "+ a);
+            System.out.println("Error: ");
         } finally {
             System.out.println("Program is over");
         }

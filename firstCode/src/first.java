@@ -20,7 +20,7 @@ public class first {
         printDetails("Paul", 25);
 
         System.out.println("Hello world");
-        System.out.println("Let's print a sequence of numbers\n");
+        System.out.println("Let's print a sequence  of numbers\n");
 
         for (int i = 0; i <= 10; i++) {
             System.out.println("i = "+ i);

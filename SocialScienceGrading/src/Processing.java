@@ -5,9 +5,7 @@ public class Processing {
 
     int countA, countB, countC, countD, countF;
 
-    double average;
-    double max;
-    double min;
+    double average, max, min;
 
     public Processing(int size) {
         finalScores = new double[size];
@@ -22,13 +20,14 @@ public class Processing {
 
         for (int i = 0; i < input.size; i++) {
 
+            // Convert scores properly
             double mid = (input.midsem[i] / 100) * 30;
             double exam = (input.exams[i] / 100) * 70;
 
             double finalScore = mid + exam;
             finalScores[i] = finalScore;
 
-            // Grade (KNUST scale)
+            // KNUST grading
             if (finalScore >= 70) {
                 grades[i] = 'A'; countA++;
             } else if (finalScore >= 60) {
