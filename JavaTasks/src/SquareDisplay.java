@@ -12,7 +12,7 @@ public class SquareDisplay {
     }
 
     public static void main(String[] args) {
-        System.out.println("Enter a number between 0-15: ");
+        System.out.print("Enter a number between 0-15: ");
         int number = scanner.nextInt();
 
         System.out.println("\nDisplaying square...");

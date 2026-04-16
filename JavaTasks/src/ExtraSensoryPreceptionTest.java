@@ -3,11 +3,10 @@ import java.util.Scanner;
 
 public class ExtraSensoryPreceptionTest {
     static Scanner scanner = new Scanner(System.in);
+    static Random rand = new Random();
 
     static String generateRandomColour(String[] colours) {
-        Random rand = new Random();
         int randomIndex = rand.nextInt(colours.length);
-
         return colours[randomIndex];
     }
 
@@ -25,13 +24,13 @@ public class ExtraSensoryPreceptionTest {
 
         for (int i = 0; i < 10; i++) {
             System.out.println("\nAttempt "+ (i + 1) );
-            System.out.println("Guess the colour. Capitalize the first letter: ");
+            System.out.println("Guess the colour: ");
             String input = scanner.next();
 
             sessionAttempts++;
             totalAttempts++;
 
-            if (input.equals(randomColour)) {
+            if (input.equalsIgnoreCase(randomColour)) {
                 System.out.println("\nClock it! You got it right... :)");
                 System.out.println("You got the correct colour ("+ randomColour +") after "+ sessionAttempts +" guesses.");
                 randomColour = generateRandomColour(colours);
